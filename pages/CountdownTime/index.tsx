@@ -5,7 +5,12 @@ const NEW_YEARS = "1 Jan 2023";
 
 const CountdownTime = () => {
   const newYearsDate = new Date(NEW_YEARS);
-  const [diffTime, setDiffTime] = useState({
+  const [diffTime, setDiffTime] = useState<{
+    days: string | number;
+    hours: string | number;
+    mins: string | number;
+    seconds: string | number;
+  }>({
     days: 0,
     hours: 0,
     mins: 0,
@@ -24,9 +29,9 @@ const CountdownTime = () => {
       const seconds = Math.floor(totalSeconds) % 60;
       setDiffTime({
         days,
-        hours,
-        mins,
-        seconds,
+        hours: formatTime(hours),
+        mins: formatTime(mins),
+        seconds: formatTime(seconds),
       });
     }, 1000);
   });
