@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 10 Projects in 10 Hours
 
-## Getting Started
+YouTube video is now Live, click below:
 
-First, run the development server:
+[10Hours10Project](https://www.youtube.com/watch?v=dtKciwk_si4)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I will program this proj again from raw html/css/js to react/ts, and if possible, deploy this project in severless platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can find the original projects [here](https://10projects10hours.netlify.app/).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Countdown Timer
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Design: https://uidesigndaily.com/posts/sketch-countdown-timer-day-876
+- future date
+- timer
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Quiz App
 
-## Learn More
+- Design: https://uidesigndaily.com/posts/sketch-questionnaire-choice-submit-day-924
+- questions from obj
+- select answer
+- at the end show score
 
-To learn more about Next.js, take a look at the following resources:
+3. Recipe App
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Design: https://uidesigndaily.com/posts/sketch-recipe-app-food-mobile-day-615
+- recipe info on click
+- fav recipe (w/ localStorage)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Notes App
 
-## Deploy on Vercel
+- Design: https://uidesigndaily.com/posts/photoshop-notes-widget-day-65
+- CRUD note
+- markdown
+- localStorage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. ToDo App
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Design: http://todomvc.com/examples/react/#/
+- CRUD todos
+- localStorage
+
+6. Movie App
+
+- Design: https://uidesigndaily.com/posts/photoshop-movie-app-mobile-day-193
+- list of movies
+- movie info
+- fav movie
+- actors
+
+7. GitHub Profiles App
+
+- Design: https://uidesigndaily.com/posts/photoshop-profile-card-user-day-286
+- search for user
+- get and show data
+
+8. Drawing App
+
+- canvas
+- size
+- color
+
+9. Password Generator
+
+- Design: https://codepen.io/FlorinPop17/full/BaBePej
+- numbers
+- letters
+- symbols
+- copy to clipboard
+
+10. Weather App
+
+- Design: https://uidesigndaily.com/posts/photoshop-weather-prognosis-day-156
+- enter location
+- get weather
+- have some icons?
