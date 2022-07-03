@@ -8,7 +8,7 @@ const quizData = [
     b: "20",
     c: "30",
     d: "40",
-    correct: "c",
+    correct: "b",
   },
   {
     question: "What is the most used Programming language?",
@@ -45,6 +45,7 @@ const QuizApp = () => {
         <div className={styles.quizHeader}>
           <h2 className={styles.questionText}>{quiz.question}</h2>
           <RadioGroup
+            style={{ width: "100%" }}
             onChange={(e) => {
               setAnswer(e.target.value);
             }}
@@ -65,15 +66,22 @@ const QuizApp = () => {
           </RadioGroup>
         </div>
         <Button
+          theme="solid"
           onClick={() => {
+            if (answer === quiz.correct) {
+              score.current += 1;
+            }
             if (quizNum.current === quizData.length - 1) {
               Toast.info(
                 `You answered correctly at ${score.current}/${quizData.length} questions.`
               );
+              quizNum.current = 0;
+              score.current = 0;
+              setQuiz(quizData[quizNum.current]);
               return;
             }
-            if (answer === quiz.correct) {
-              score.current += 1;
+            if (!answer) {
+              return;
             }
             setQuiz(quizData[quizNum.current + 1]);
             quizNum.current += 1;
@@ -82,9 +90,6 @@ const QuizApp = () => {
         >
           Submit
         </Button>
-        {/*<Button className={styles.button} onClick={() => setQuiz(quizData[0])}>*/}
-        {/*  Reload*/}
-        {/*</Button>*/}
       </div>
     </div>
   );
