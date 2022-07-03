@@ -38,23 +38,27 @@ const QuizApp = () => {
     d: string;
     correct: string;
   }>(quizData[quizNum.current]);
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState<string>("");
   return (
     <div className={styles.page}>
       <div className={styles.quizContainer}>
         <div className={styles.quizHeader}>
           <h2 className={styles.questionText}>{quiz.question}</h2>
-          <RadioGroup>
+          <RadioGroup
+            onChange={(e) => {
+              setAnswer(e.target.value);
+            }}
+          >
             <List
               dataSource={[
-                { question: quiz.a },
-                { question: quiz.b },
-                { question: quiz.c },
-                { question: quiz.d },
+                { question: quiz.a, value: "a" },
+                { question: quiz.b, value: "b" },
+                { question: quiz.c, value: "c" },
+                { question: quiz.d, value: "d" },
               ]}
               renderItem={(item) => (
                 <List.Item>
-                  <Radio value={item.question}>{item.question}</Radio>
+                  <Radio value={item.value}>{item.question}</Radio>
                 </List.Item>
               )}
             />
@@ -62,22 +66,25 @@ const QuizApp = () => {
         </div>
         <Button
           onClick={() => {
-            // const key = quiz.correct;
-            // // @ts-ignore
-            // if (quiz[key] === "a232131") {
-            //   score.current += 1;
-            // }
-            // quizNum.current += 1;
-            // if (quizNum.current < quizData.length) {
-            //   setQuiz(quizData[quizNum.current]);
-            // } else {
-            //   alert(`获得Score: ${score.current}`);
-            // }
+            if (quizNum.current === quizData.length - 1) {
+              Toast.info(
+                `You answered correctly at ${score.current}/${quizData.length} questions.`
+              );
+              return;
+            }
+            if (answer === quiz.correct) {
+              score.current += 1;
+            }
+            setQuiz(quizData[quizNum.current + 1]);
+            quizNum.current += 1;
           }}
           className={styles.button}
         >
           Submit
         </Button>
+        {/*<Button className={styles.button} onClick={() => setQuiz(quizData[0])}>*/}
+        {/*  Reload*/}
+        {/*</Button>*/}
       </div>
     </div>
   );
