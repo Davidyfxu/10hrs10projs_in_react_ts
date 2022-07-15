@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Nav, Layout } from "@douyinfe/semi-ui";
 import {
   IconCalendarClock,
@@ -10,11 +10,17 @@ import {
   IconList,
   IconMenu,
   IconSafe,
-  IconStar,
   IconSun,
 } from "@douyinfe/semi-icons";
 import CountdownTime from "./CountdownTime";
 import Quiz from "./Quiz";
+import Recipe from "./Recipe";
+import Drawing from "./Drawing";
+import Weather from "./Weather";
+import ToDo from "./ToDo";
+import PswGen from "./PswGen";
+import Notes from "./Notes";
+import GithubProfiles from "./GithubProfiles";
 const App = () => {
   const { Header, Footer, Sider, Content } = Layout;
 
@@ -95,6 +101,13 @@ const App = () => {
         <Routes>
           <Route path="CountdownTime" element={<CountdownTime />} />
           <Route path="Quiz" element={<Quiz />} />
+          <Route path="Recipe" element={<Recipe />} />
+          <Route path="Notes" element={<Notes />} />
+          <Route path="ToDo" element={<ToDo />} />
+          <Route path="GitHubProfiles" element={<GithubProfiles />} />
+          <Route path="Drawing" element={<Drawing />} />
+          <Route path="PswGen" element={<PswGen />} />
+          <Route path="Weather" element={<Weather />} />
         </Routes>
       </Content>
     </Layout>
