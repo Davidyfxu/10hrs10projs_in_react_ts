@@ -27,7 +27,7 @@ const quizData = [
     correct: "b",
   },
 ];
-const QuizApp = () => {
+const Quiz = () => {
   const quizNum = useRef(0);
   const score = useRef(0);
   const [quiz, setQuiz] = useState<{
@@ -95,4 +95,4 @@ const QuizApp = () => {
   );
 };
 
-export default QuizApp;
+export default Quiz;
