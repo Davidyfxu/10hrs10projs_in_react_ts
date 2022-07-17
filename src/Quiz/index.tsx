@@ -43,7 +43,7 @@ const Quiz = () => {
     <div className={styles.page}>
       <div className={styles.quizContainer}>
         <div className={styles.quizHeader}>
-          <h2 className={styles.questionText}>{quiz.question}</h2>
+          <h3 className={styles.questionText}>{quiz.question}</h3>
           <RadioGroup
             style={{ width: "100%" }}
             onChange={(e) => {
