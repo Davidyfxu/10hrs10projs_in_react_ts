@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import {
   Avatar,
   Button,
+  Empty,
   Input,
   List,
   Modal,
@@ -10,8 +11,9 @@ import {
   Typography,
 } from "@douyinfe/semi-ui";
 import _ from "lodash";
+import { IllustrationNoResult } from "@douyinfe/semi-illustrations";
 import { IconClose, IconLikeHeart, IconSearch } from "@douyinfe/semi-icons";
-import { getMealById, getMealsBySearch, getRandomMeal } from "./apis";
+import { getMealsBySearch, getRandomMeal } from "./apis";
 import { IMeal } from "./types";
 const { Title, Paragraph } = Typography;
 const Meal = (props: {
@@ -77,7 +79,9 @@ const Recipe = () => {
     try {
       setLoading(true);
       if (inputV.length === 0)
-        getRandomMeal().then((m: { meals: IMeal[] }) => setMeals(m.meals));
+        getRandomMeal().then((m: { meals?: IMeal[] }) =>
+          setMeals(_.get(m, "meals", []))
+        );
     } catch (e) {
       console.error(e);
     } finally {
@@ -89,7 +93,9 @@ const Recipe = () => {
     try {
       setLoading(true);
       if (inputV.length > 0)
-        getMealsBySearch(inputV).then((m: IMeal[]) => setMeals(m));
+        getMealsBySearch(inputV).then((m: { meals?: IMeal[] }) =>
+          setMeals(_.get(m, "meals", []))
+        );
     } catch (e) {
       console.error(e);
     } finally {
@@ -102,7 +108,12 @@ const Recipe = () => {
       <div className={styles.mobileContainer}>
         <div className={styles.mobileHeader}>
           <Spin spinning={loading}>
-            <Input onChange={onInputChange} suffix={<IconSearch />} />
+            <Input
+              onEnterPress={(e: any) => {
+                onInputChange(e.target.value);
+              }}
+              suffix={<IconSearch />}
+            />
           </Spin>
         </div>
         <div className={styles.favContainer}>
@@ -128,17 +139,26 @@ const Recipe = () => {
           </div>
         </div>
         <Spin spinning={loading}>
-          <div className="meals" id="meals">
-            {meals.map((m: IMeal, index: number) => (
-              <Meal
-                key={index}
-                meal={m}
-                setShowMeal={setShowMeal}
-                setVisible={setVisible}
-                mealsLs={mealsLs}
-                setMealsLs={setMealsLs}
+          <div className="meals">
+            {meals ? (
+              meals.map((m: IMeal, index: number) => (
+                <Meal
+                  key={index}
+                  meal={m}
+                  setShowMeal={setShowMeal}
+                  setVisible={setVisible}
+                  mealsLs={mealsLs}
+                  setMealsLs={setMealsLs}
+                />
+              ))
+            ) : (
+              <Empty
+                image={
+                  <IllustrationNoResult style={{ width: 150, height: 150 }} />
+                }
+                description={"No search result"}
               />
-            ))}
+            )}
           </div>
         </Spin>
       </div>

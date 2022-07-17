@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
 import { Button, TextArea } from "@douyinfe/semi-ui";
-import { IconDelete, IconEdit, IconPlus } from "@douyinfe/semi-icons";
+import {IconDelete,  IconPlus, IconSave} from "@douyinfe/semi-icons";
 
 interface INote {
   idx: number;
@@ -22,7 +22,7 @@ const Note = (props: {
         <div className={styles.tools}>
           <Button
             style={{ marginLeft: 16 }}
-            icon={<IconEdit />}
+            icon={<IconSave />}
             onClick={() => {
               let newNotes = [...notes];
               console.log(newNotes);

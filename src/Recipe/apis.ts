@@ -15,6 +15,5 @@ export const getMealsBySearch = async (term: string) => {
   const resp = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
   );
-  const respData = await resp.json();
-  return respData.meals;
+  return await resp.json();
 };
