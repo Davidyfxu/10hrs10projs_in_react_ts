@@ -34,7 +34,7 @@ const UserCard = (props: any) => {
         />
       </div>
       <div className={styles.userInfo}>
-        <h2>{user?.name}</h2>
+        <h3>{user?.name}</h3>
         <p>{user?.bio}</p>
         <ul className="info">
           <li>
@@ -82,7 +82,7 @@ const GithubProfiles = () => {
 
   return (
     <div className={styles.body}>
-      <h2>Search a Github User</h2>
+      <h3>Search a Github User</h3>
       <Input
         className={styles.searchPanel}
         suffix={<IconSearch />}
