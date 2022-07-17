@@ -2,6 +2,9 @@
   "name": "10hrs10projs_in_react_ts",
   "private": true,
   "version": "1.0.0",
+  "author": {
+    "name": "xuyifan"
+  },
   "homepage":"https://davidyfxu.github.io/challenge-10-projects-10-hours/",
   "scripts": {
     "dev": "vite",
