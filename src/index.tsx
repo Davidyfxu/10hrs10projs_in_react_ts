@@ -21,8 +21,10 @@ import ToDo from "./ToDo";
 import PswGen from "./PswGen";
 import Notes from "./Notes";
 import GithubProfiles from "./GithubProfiles";
+
 const App = () => {
-  const { Header, Footer, Sider, Content } = Layout;
+  const {  Sider, Content } = Layout;
+  const url = window.location.href;
 
   return (
     <Layout>
@@ -34,55 +36,55 @@ const App = () => {
               itemKey: "CountdownTime",
               text: "CountdownTime",
               icon: <IconHourglass />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/CountdownTime",
+              link: `${url}/CountdownTime`,
             },
             {
               itemKey: "Quiz",
               text: "Quiz",
               icon: <IconCalendarClock />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/Quiz",
+              link: `${url}/Quiz`,
             },
             {
               itemKey: "Recipe",
               text: "Recipe",
               icon: <IconMenu />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/Recipe",
+              link: `${url}/Recipe`,
             },
             {
               itemKey: "Notes",
               text: "Notes",
               icon: <IconFile />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/Notes",
+              link: `${url}/Notes`,
             },
             {
               itemKey: "ToDo",
               text: "ToDo",
               icon: <IconList />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/ToDo",
+              link: `${url}/ToDo`,
             },
             {
               itemKey: "GitHubProfiles",
               text: "GitHubProfiles",
               icon: <IconGithubLogo />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/GitHubProfiles",
+              link: `${url}/GitHubProfiles`,
             },
             {
               itemKey: "Drawing",
               text: "Drawing",
               icon: <IconEdit />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/Drawing",
+              link: `${url}/Drawing`,
             },
             {
               itemKey: "PswGen",
               text: "PswGen",
               icon: <IconSafe />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/PswGen",
+              link: `${url}/PswGen`,
             },
             {
               itemKey: "Weather",
               text: "Weather",
               icon: <IconSun />,
-              link: "https://davidyfxu.github.io/10hrs10projs_in_react_ts/Weather",
+              link: `${url}/Weather`,
             },
           ]}
           header={{
