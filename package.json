@@ -2,7 +2,6 @@
   "name": "10hrs10projs_in_react_ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://davidyfxu.github.io/10hrs10projs_in_react_ts",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
