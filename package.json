@@ -1,7 +1,8 @@
 {
   "name": "10hrs10projs_in_react_ts",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage":"https://davidyfxu.github.io/challenge-10-projects-10-hours/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
