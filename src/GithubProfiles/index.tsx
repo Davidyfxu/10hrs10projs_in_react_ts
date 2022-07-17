@@ -66,7 +66,7 @@ const UserCard = (props: any) => {
 };
 
 const GithubProfiles = () => {
-  const [name, setName] = useState("davidyfxu");
+  const [name, setName] = useState("");
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   useEffect(() => {
